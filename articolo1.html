@@ -118,9 +118,13 @@ p risulta ben superiore il limite s di 0.05 quindi non risultano differenze stat
 
 
 <h3>Forecasting </h3>
+<p>Per prima cosa osserviamo l'andamento delle vendite mensili per capire che tipo di andamento ha:</p>
+<img src="img/lineplot_monthly.png" alt="storico vendite" width="500">
 
-<h4>Approccio Multi-Modello</h4>
-<p>Ho implementato un sistema di previsione sofisticato utilizzando tre diversi modelli statistici:</p>
+<p>Notiamo un'andatura stagionale marcata con un lieve trend in crescita. Testiamo un modello sarima sui dati disponibili e vediamo come si comporta.
+<img src="img/sarimax_test.png" alt="sarimax" width="500">
+<p>Il modello si adatta bene sia al trend che alla stagionalità lineare</p>
+  Ho implementato un sistema di previsione sofisticato utilizzando tre diversi modelli statistici:</p>
 <ul>
   <li>SARIMAX (Seasonal ARIMA with Exogenous variables</li>
   <li>ETS (Error, Trend, Seasonality)</li>
