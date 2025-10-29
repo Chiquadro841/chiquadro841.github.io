@@ -127,6 +127,6 @@ table th {
 @media (max-width: 600px) {
   img {
     width: 100%;   /* Occupa tutto lo spazio disponibile su schermi piccoli */
-    height: auto;
+    height: 100%;
   }
 }
