@@ -124,21 +124,20 @@ In rosso è segnata la media della spesa storica di ciascun cliente.
 <p>Per prima cosa osserviamo l'andamento delle vendite mensili per capire che tipo di andamento ha:</p>
 <img src="img/lineplot_monthly.png" alt="storico vendite" width="700">
 
-<p>Notiamo un'andatura stagionale marcata con un lieve trend in crescita. Testiamo un modello sarima sui dati disponibili e vediamo come si comporta.
+<p>Notiamo un'andatura stagionale marcata con un lieve trend in crescita.<br>
+Durante l'anno avvengono due picchi regolarmente ad agosto e a novembre mentre tra dicembre e gennaio abbiamo i livelli più bassi di vendite.<br>
+Ora testiamo un modello sarima sui dati disponibili e vediamo come si comporta.</p>
+
 <img src="img/sarimax_test.png" alt="sarimax" width="700">
-<p>Il modello si adatta bene sia al trend che alla stagionalità lineare</p>
-  Ho implementato un sistema di previsione sofisticato utilizzando tre diversi modelli statistici:</p>
+<p><br>Il modello si adatta bene sia al trend che alla stagionalità dato che la serie stessa mostra un andamento regolare.<br>
+  Per scopo dimostrativo useremo tre diversi modelli statistici per prevedere i 12 mesi successivi ai dati disponibili:</p>
 <ul>
   <li>SARIMAX (Seasonal ARIMA with Exogenous variables</li>
   <li>ETS (Error, Trend, Seasonality)</li>
   <li>Prophet (sviluppato da Facebook/Meta)</li>
 </ul>
-<p>Questo approccio multi-modello permette di:</p>
-<ul>
-  <li>Catturare diverse componenti della serie temporale</li>
-  <li>Fornire previsioni robuste considerando diversi aspetti del pattern di vendita</li>
-  <li>Offrire intervalli di confidenza per una migliore gestione del rischio</li>
-</ul>
+<p>Questo approccio permette di capire se ci sono tratti di una serie che un modello riesce a catturare meglio di altri.
+In questo caso la serie è regolare quindi ci aspettiamo che tutti e tre i modelli si comportino bene sia in trend che stagionalità.</p>
 
 <!-- Spazio per grafico -->
 <img src="img/forecast_models.png" alt="Previsioni Multi-Modello" width="700">
