@@ -82,7 +82,7 @@ ul {
   padding-left: 20px;
 }
 table {
-  margin: 15px auto;       /* ✅ distanzia verticalmente e centra la tabella */
+  margin: 15px auto;      
 }
 
 table th, table td {
