@@ -8,7 +8,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
+    left: -250px;  /* Nascosta */
+    top: 0;
+    transition: 0.3s
   }
+
+/* Sidebar aperta */
+.sidebar.sidebar-open {
+  left: 0;
+}
+
+/* Pulsante hamburger */
+.hamburger {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* Spostamento del contenuto quando la sidebar è aperta */
+.sidebar.sidebar-open ~ .main {
+  margin-left: 250px;
+  transition: 0.3s;
+}
   .sidebar img {
     width: 100px;
    height: 100px;
