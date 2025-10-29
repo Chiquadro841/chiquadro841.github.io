@@ -62,10 +62,11 @@ pre code span.comment {
 }
 
  img {
+  
   max-width: 100%;
-  height: auto;
+  height: 500px;
   margin: 15px 0;
-  border-radius: 8px; /* opzionale, angoli leggermente arrotondati */
+  border-radius: 8px; 
 }
 
  /* Titoli e paragrafi */
@@ -74,15 +75,19 @@ h2, h3, h4 {
   margin-bottom: 15px;
 }
 p, ul {
+  margin-top:15px;
   margin-bottom: 15px;
 }
 ul {
   padding-left: 20px;
 }
+table {
+  margin: 15px auto;       /* ✅ distanzia verticalmente e centra la tabella */
+}
 
 table th, table td {
   text-align: center;       
-  padding: 6px 10px;
+  padding: 2px 4px;
 }
 
 table th {
