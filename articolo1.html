@@ -112,20 +112,20 @@ p risulta ben superiore il limite s di 0.05 quindi non risultano differenze stat
 
 <h4>Analisi dei Top Clienti</h4>
 <p>Ho identificato e analizzato i clienti "premium" (con vendite superiori a $10,000), rivelando un interessante pattern: alcuni dei maggiori contributori al fatturato (in particolare SM-20320 e TC-20980) hanno raggiunto questi volumi principalmente
-  attraverso ordini una tantum di grande entità, piuttosto che attraverso acquisti regolari.
+  attraverso ordini una tantum di grande entità, piuttosto che attraverso acquisti regolari.<br>
 In rosso è segnata la media della spesa storica di ciascun cliente.
 </p>
 
 <!-- Spazio per grafico -->
-<img src="img/richest_sales.png" alt="Top Clienti" width="700">
+<img src="img/richest_sales.png" alt="Top Clienti" width="500">
 
 
 <h3>Forecasting </h3>
 <p>Per prima cosa osserviamo l'andamento delle vendite mensili per capire che tipo di andamento ha:</p>
-<img src="img/lineplot_monthly.png" alt="storico vendite" width="500">
+<img src="img/lineplot_monthly.png" alt="storico vendite" width="700">
 
 <p>Notiamo un'andatura stagionale marcata con un lieve trend in crescita. Testiamo un modello sarima sui dati disponibili e vediamo come si comporta.
-<img src="img/sarimax_test.png" alt="sarimax" width="500">
+<img src="img/sarimax_test.png" alt="sarimax" width="700">
 <p>Il modello si adatta bene sia al trend che alla stagionalità lineare</p>
   Ho implementato un sistema di previsione sofisticato utilizzando tre diversi modelli statistici:</p>
 <ul>
@@ -141,7 +141,7 @@ In rosso è segnata la media della spesa storica di ciascun cliente.
 </ul>
 
 <!-- Spazio per grafico -->
-<img src="img/forecast_models.png" alt="Previsioni Multi-Modello" width="500">
+<img src="img/forecast_models.png" alt="Previsioni Multi-Modello" width="700">
 
 <h4>Validazione del Modello</h4>
 <p>Ho utilizzato un orizzonte di previsione di 12 mesi, implementando:</p>
