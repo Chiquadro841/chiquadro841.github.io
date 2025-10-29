@@ -80,16 +80,11 @@ ul {
   padding-left: 20px;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
 table th, table td {
-  text-align: center;       /* ✅ centra testo e numeri */
+  text-align: center;       
   padding: 6px 10px;
 }
 
 table th {
-  font-weight: bold;
+  font-size:14px;
 }
