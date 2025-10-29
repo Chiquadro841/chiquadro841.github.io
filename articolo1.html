@@ -129,8 +129,10 @@ Durante l'anno avvengono due picchi regolarmente ad agosto e a novembre mentre t
 Ora testiamo un modello sarima sui dati disponibili e vediamo come si comporta.</p>
 
 <img src="img/sarimax_test.png" alt="sarimax" width="700">
-<p><br>Il modello si adatta bene sia al trend che alla stagionalità dato che la serie stessa mostra un andamento regolare.<br>
-  Per scopo dimostrativo useremo tre diversi modelli statistici per prevedere i 12 mesi successivi ai dati disponibili:</p>
+<p><br>Con parametri standard da 1 e una stagionalità da 24 troviamo un mape ( errore % medio) del 22%.<br>
+Il modello si adatta bene sia al trend che alla stagionalità dato che la serie stessa mostra un andamento regolare.<br>
+  
+Per scopo dimostrativo useremo tre diversi modelli statistici per prevedere i 12 mesi successivi ai dati disponibili:</p>
 <ul>
   <li>SARIMAX (Seasonal ARIMA with Exogenous variables</li>
   <li>ETS (Error, Trend, Seasonality)</li>
@@ -140,7 +142,7 @@ Ora testiamo un modello sarima sui dati disponibili e vediamo come si comporta.<
 In questo caso la serie è regolare quindi ci aspettiamo che tutti e tre i modelli si comportino bene sia in trend che stagionalità.</p>
 
 <!-- Spazio per grafico -->
-<img src="img/forecast_models.png" alt="Previsioni Multi-Modello" width="700">
+<img src="img/models_forecast.png" alt="Previsioni Multi-Modello" width="700">
 
 <h4>Validazione del Modello</h4>
 <p>Ho utilizzato un orizzonte di previsione di 12 mesi, implementando:</p>
