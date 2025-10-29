@@ -41,8 +41,24 @@ Copiers       2215.880212       66
 Con raccoglitori il prodotto piu ordinato seguito dalla carta, come suggerito dalla categoria di appartenenza. Le Stampanti e altri
 oggetti simili invece sono quelli che generano più ricavi pur essendo tra i prodotti meno ordinati.
   
-  segmentazione della clientela, identificando pattern significativi nelle preferenze d'acquisto.
-L'analisi ha rivelato che, sebbene il materiale d'ufficio sia la categoria predominante, esiste una notevole diversificazione nelle preferenze dei clienti tra i vari settori merceologici.</p>
+Segmentando la clientela, continuiamo a trovare la categoria ufficio come la più frequente e lo stesso per i metodi di spedizione utilizzati:
+
+             standard  first  second  sameday
+Segment                                      
+Consumer        59.42  14.80   19.66     6.12
+Corporate       60.35  15.85   19.95     3.86
+Home Office     59.91  15.92   17.75     6.41
+
+Facendo un test ANOVA sulle vendite distinte per segmento controlliamo se in media ci sono differenze.
+
+H0 ipotesi nulla -> le medie sono uguali
+H1 ipotesi test -> le medie sono differenti
+  
+l'output è:
+ANOVA tra segmenti: F=0.59, p=0.5558
+p risulta ben superiore il limite s di 0.05 quindi non risultano differenze statisticamente significative.
+  
+</p>
 
   <!--  grafico -->
 <img src="/articolo1_img/sales_to_category.png" alt="Revenue" width="500">
