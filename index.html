@@ -69,24 +69,30 @@
 
 <script>
 
- function showContent(section) {
+function showContent(section) {
   const content = document.getElementById('content');
   let file = "";
 
-    if(section === 'presentazione') {
-      content.innerHTML = `<h2>Presentazione</h2><p>Sito in costruzione . . . .</p>`;
-  if (section === 'articolo1') file = "articolo1.html";
+  if (section === 'presentazione') {
+    content.innerHTML = `<h2>Presentazione</h2><p>Sito in costruzione . . . .</p>`;
+    return; // Esce dalla funzione, niente fetch
+  } 
+  else if (section === 'articolo1') {
+    file = "articolo1.html";
+  }
 
-  fetch(file)
-    .then(response => response.text())
-    .then(data => content.innerHTML = data)
-    .catch(() => content.innerHTML = "<p>Errore nel caricamento.</p>");
+  if(file) {
+    fetch(file)
+      .then(response => response.text())
+      .then(data => content.innerHTML = data)
+      .catch(() => content.innerHTML = "<p>Errore nel caricamento.</p>");
+  }
 }
 
-  // Mostra la Presentazione all'apertura del sito
-  window.onload = function() {
-    showContent('presentazione');
-  }
+// Mostra la Presentazione all'apertura del sito
+window.onload = function() {
+  showContent('presentazione');
+}
 </script>
 
 </body>
