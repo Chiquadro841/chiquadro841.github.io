@@ -9,6 +9,9 @@
 </head>
 <body>
 
+   <!-- Pulsante hamburger -->
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
   <div class="sidebar">
     <img src="img/pics.jpg" alt="Foto">
     <h2>Brandon De Vincentis</h2>
@@ -30,6 +33,11 @@
   </div>
 
 <script>
+
+ // ✅ MOSTRA/NASCONDE LA SIDEBAR
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("sidebar-open");
+}
 
 function showContent(section) {
   const content = document.getElementById('content');
