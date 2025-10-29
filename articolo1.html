@@ -58,7 +58,10 @@ su trend e stagionalità.
 I raccoglitori (binders) sono il prodotto piu ordinato seguito dalla carta, come si poteva intuire facendo parte della categoria ufficio.
 Le Stampanti (copiers) e altri oggetti simili invece sono quelli che generano più ricavi pur essendo tra i prodotti meno ordinati.
   
-Segmentando la clientela, troviamo che la categoria ufficio rimane la più frequente per tutti e lo stesso per i metodi di spedizione utilizzati:
+Segmentando la clientela, troviamo che la categoria ufficio rimane la più frequente per tutti e lo stesso per i metodi di spedizione utilizzati.
+In particolare, il segmento Corporate mostra una minore propensione all'utilizzo del servizio Same Day,
+suggerendo possibili opportunità di ottimizzazione del servizio.
+  
 </p>
 <table>
   <thead>
@@ -106,14 +109,6 @@ ANOVA tra segmenti: F=0.59, p=0.5558
 p risulta ben superiore il limite s di 0.05 quindi non risultano differenze statisticamente significative.
   
 </p>
-  
-<!-- Esempio snippet di codice -->
-<pre><code><span class="comment"># Caricamento e analisi dei dati</span>
-  
-import pandas as pd
-
-df = pd.read_csv("sales_data.csv")
-df.groupby('Category')['Sales'].sum().sort_values(ascending=False)</code></pre>
 
 <h4>Analisi dei Top Clienti</h4>
 <p>Ho identificato e analizzato i clienti "premium" (con vendite superiori a $10,000), rivelando un interessante pattern: alcuni dei maggiori contributori al fatturato (in particolare SM-20320 e TC-20980) hanno raggiunto questi volumi principalmente attraverso ordini una tantum di grande entità, piuttosto che attraverso acquisti regolari.</p>
@@ -121,39 +116,13 @@ df.groupby('Category')['Sales'].sum().sort_values(ascending=False)</code></pre>
 <!-- Spazio per grafico -->
 <img src="img/richest_sales.png" alt="Top Clienti" width="500">
 
-<h4>Pattern di Spedizione</h4>
-<p>L'analisi delle modalità di spedizione ha evidenziato una distribuzione sorprendentemente uniforme tra i diversi segmenti di clientela,
-con solo lievi variazioni. In particolare, il segmento Corporate mostra una minore propensione all'utilizzo del servizio Same Day,
-suggerendo possibili opportunità di ottimizzazione del servizio.
-  
-             standard  first  second  sameday
-Segment                                      
-Consumer        59.42  14.80   19.66     6.12
-Corporate       60.35  15.85   19.95     3.86
-Home Office     59.91  15.92   17.75     6.41
-</p>
 
-<h3>Analisi Statistica</h3>
-<p>Ho condotto test statistici rigorosi per validare le differenze osservate:</p>
-<ul>
-  <li>Test ANOVA sui segmenti di clientela per valutare la significatività delle differenze nelle vendite</li>
-  <li>T-test specifici tra regioni (es. West vs East) per identificare variazioni geografiche significative</li>
-</ul>
-
-<!-- Esempio snippet di codice -->
-<pre><code>from scipy.stats import f_oneway, ttest_ind
-
-anova_result = f_oneway(df[df['Segment']=='Consumer']['Sales'],
-                        df[df['Segment']=='Corporate']['Sales'],
-                        df[df['Segment']=='Home Office']['Sales'])
-anova_result</code></pre>
-
-<h3>Forecasting Avanzato</h3>
+<h3>Forecasting </h3>
 
 <h4>Approccio Multi-Modello</h4>
 <p>Ho implementato un sistema di previsione sofisticato utilizzando tre diversi modelli statistici:</p>
 <ul>
-  <li>SARIMAX (Seasonal ARIMA with Exogenous variables)</li>
+  <li>SARIMAX (Seasonal ARIMA with Exogenous variables</li>
   <li>ETS (Error, Trend, Seasonality)</li>
   <li>Prophet (sviluppato da Facebook/Meta)</li>
 </ul>
