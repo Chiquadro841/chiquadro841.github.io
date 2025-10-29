@@ -9,6 +9,8 @@
     flex-direction: column;
     align-items: center;
     position: fixed;
+    bottom: 0;         /* la sidebar occupa tutta l’altezza */
+    height: 100vh;
     left: -250px;  /* Nascosta */
     top: 0;
     transition: 0.3s
@@ -31,11 +33,6 @@
   z-index: 999;
 }
 
-/* Spostamento del contenuto quando la sidebar è aperta */
-.sidebar.sidebar-open ~ .main {
-  margin-left: 250px;
-  transition: 0.3s;
-}
   .sidebar img {
     width: 100px;
    height: 100px;
