@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-family: "Cambria", serif;
+}
+
+th, td {
+  border: 1px solid #555;
+  padding: 8px 12px;
+  text-align: right;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #1f1f1f;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #2a2a2a;
+}
+
+td:first-child {
+  text-align: left; /* Sub-Category a sinistra */
+}
