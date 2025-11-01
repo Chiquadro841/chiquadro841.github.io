@@ -16,8 +16,19 @@ L'app funziona con javascript per il frontend (raccolta dati immagine e invio ri
 <p> Questa è come si presenta l'interfaccia</p>
 <img src="img/Screenshot.png" width="600">
 
-<h3>Descrizione modello</h3>
+<h3>Come funziona il modello di riconoscimento</h3>
+<p>
+Per riconoscere le cifre disegnate, il progetto utilizza una <b>Rete Neurale Convoluzionale</b> (CNN), un tipo di modello molto efficace
+nel riconoscimento di immagini. L’idea principale è simulare il modo in cui il cervello umano riconosce forme e pattern visivi.
+</p>
 
+<h4>Perché una CNN?</h4>
+<p>
+In un’immagine i pixel non sono semplicemente numeri: hanno posizioni, bordi, curve e strutture ripetute.  
+Le CNN sono progettate proprio per estrarre queste caratteristiche automaticamente, senza bisogno di programmarle a mano.
+</p>
+
+<h4>Architettura del modello</h4>
 <pre><code>model = Sequential([
     Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
     MaxPooling2D((2, 2)),
@@ -33,26 +44,60 @@ L'app funziona con javascript per il frontend (raccolta dati immagine e invio ri
     Dense(10, activation='softmax')
 ])
 </code></pre>
-<p>Layer	Cosa fa<br>
-Conv2D(32, 3×3)	filtra l’immagine e trova bordi/curve<br>
-MaxPooling2D	riduce la dimensione (meno calcoli, riduce overfitting)<br>
-Dropout(0.25)	spegne il 25% dei neuroni per evitare overfitting
-</p>
 
+<table border="1" cellpadding="6">
+<tr><th>Layer</th><th>Funzione</th></tr>
+<tr>
+    <td><b>Conv2D</b></td>
+    <td>Applica dei filtri (3×3) all'immagine per individuare bordi, curve e forme</td>
+</tr>
+<tr>
+    <td><b>MaxPooling2D</b></td>
+    <td>Riduce la dimensione dell’immagine mantenendo le informazioni importanti. Rende il modello più veloce e più robusto.</td>
+</tr>
+<tr>
+    <td><b>Dropout</b></td>
+    <td>Disattiva casualmente una parte dei neuroni durante l’addestramento per evitare overfitting</td>
+</tr>
+<tr>
+    <td><b>Flatten</b></td>
+    <td>Trasforma la matrice dell’immagine in un vettore</td>
+</tr>
+<tr>
+    <td><b>Dense</b></td>
+    <td>Layer finale che decide quale cifra (0-9) è più probabile</td>
+</tr>
+</table>
+
+<h4>Compilazione e addestramento</h4>
 <pre><code>model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
-  model.fit(X_train, y_train, epochs=20, batch_size=32, validation_split=0.2)
+model.fit(X_train, y_train, epochs=20, batch_size=32, validation_split=0.2)
 </code></pre>
 
-
-<p>Adam: ottimo ottimizzatore automatico<br>
-categorical_crossentropy: adatto per classificazione multiclasse con one-hot encoding<br>
-accuracy: metrica di valutazione <br><br>
-  
-20 epoche di apprendimento<br>
-batch da 32 immagini per volta<br>
-usa anche una validazione (20% del train) per monitorare overfitting durante il training<br>
+<p>
+<ul>
+  <li><b>Adam</b>: ottimizzatore che impara automaticamente la velocità migliore di aggiornamento dei pesi</li>
+  <li><b>Categorical Crossentropy</b>: misura quanto il modello è distante dall’etichetta corretta</li>
+  <li><b>Accuracy</b>: percentuale di cifre classificate correttamente</li>
+</ul>
 </p>
 
+<p>
+Il modello viene allenato per 20 epoche: in ciascuna epoca vede tutte le immagini del dataset e aggiorna i suoi parametri.
+Una parte dei dati (validation split) viene tenuta da parte per verificare se la rete sta apprendendo davvero o sta memorizzando.
+</p>
+
+<h4>In breve</h4>
+<ul>
+  <li>Converti il disegno del canvas in un’immagine 28x28</li>
+  <li>La CNN estrae le caratteristiche principali</li>
+  <li>I layer finali classificano il numero</li>
+  <li>La risposta viene mandata alla web app in tempo reale</li>
+</ul>
+
+<p>
+Questo rende possibile riconoscere cifre disegnate a mano dall’utente in modo veloce e accurato.
+</p>
