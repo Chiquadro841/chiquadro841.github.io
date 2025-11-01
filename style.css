@@ -66,6 +66,9 @@
   .menu button:hover { background-color: #4fc3f7; color: #121212; }
   .content { padding: 10px 0; }
 
+  .main a{
+        color: #4fc3f7;}
+
 
 
 /* Stile per i blocchi di codice */
