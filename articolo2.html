@@ -45,29 +45,13 @@ Le CNN sono progettate proprio per estrarre queste caratteristiche automaticamen
 ])
 </code></pre>
 
-<table border="1" cellpadding="6">
-<tr><th>Layer</th><th>Funzione</th></tr>
-<tr>
-    <td><b>Conv2D</b></td>
-    <td>Applica dei filtri (3×3) all'immagine per individuare bordi, curve e forme</td>
-</tr>
-<tr>
-    <td><b>MaxPooling2D</b></td>
-    <td>Riduce la dimensione dell’immagine mantenendo le informazioni importanti. Rende il modello più veloce e più robusto.</td>
-</tr>
-<tr>
-    <td><b>Dropout</b></td>
-    <td>Disattiva casualmente una parte dei neuroni durante l’addestramento per evitare overfitting</td>
-</tr>
-<tr>
-    <td><b>Flatten</b></td>
-    <td>Trasforma la matrice dell’immagine in un vettore</td>
-</tr>
-<tr>
-    <td><b>Dense</b></td>
-    <td>Layer finale che decide quale cifra (0-9) è più probabile</td>
-</tr>
-</table>
+<ul>
+    <li>Conv2D: Applica dei filtri (3×3) all'immagine per individuare bordi, curve e forme</li>
+    <li>MaxPooling: Riduce la dimensione dell’immagine mantenendo le informazioni importanti. Rende il modello più veloce e più robusto.</li>
+    <li>Dropout: Disattiva casualmente una parte dei neuroni durante l’addestramento per evitare overfitting</li>
+    <li>Flatten: Trasforma la matrice dell’immagine in un vettore</li>
+    <li>Dense: Layer finale che decide quale cifra (0-9) è più probabile</li>
+</ul>
 
 <h4>Compilazione e addestramento</h4>
 <pre><code>model.compile(optimizer='adam',
