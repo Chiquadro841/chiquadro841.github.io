@@ -63,10 +63,11 @@
     cursor: pointer;
     border-radius: 5px;
   }
-.menu button:first-child {
+.menu button.active {
   background-color: #4fc3f7;
   color: #121212;
 }
+
   .menu button:hover { background-color: #4fc3f7; color: #121212; }
   .content { padding: 10px 0; }
 
