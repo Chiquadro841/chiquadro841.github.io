@@ -40,20 +40,19 @@ function toggleSidebar() {
   document.getElementById("sidebar").classList.toggle("sidebar-open");
 }
 
-function showContent(section) {
+function showContent(section, btn) {
   const content = document.getElementById('content');
   let file = "";
 
-  if (section === 'presentazione') {
-    file = "profilo.html";
-  } 
-  else if (section === 'articolo1') {
-    file = "articolo1.html";
-  }
+  // ✅ Rimuove active da tutti
+  document.querySelectorAll('.menu button').forEach(b => b.classList.remove('active'));
 
- else if (section === 'articolo2') {
-    file = "articolo2.html";
-  }
+  // ✅ Aggiunge active solo al pulsante cliccato
+  if (btn) btn.classList.add('active');
+
+  if (section === 'presentazione') file = "profilo.html";
+  else if (section === 'articolo1') file = "articolo1.html";
+  else if (section === 'articolo2') file = "articolo2.html";
 
   if(file) {
     fetch(file)
@@ -62,10 +61,11 @@ function showContent(section) {
       .catch(() => content.innerHTML = "<p>Errore nel caricamento.</p>");
   }
 }
-
 // Mostra la Presentazione all'apertura del sito
 window.onload = function() {
-  showContent('presentazione');
+  const first = document.querySelector('.menu button');
+  first.classList.add('active');
+  showContent('presentazione', first);
 }
 </script>
 
