@@ -33,5 +33,21 @@ Ho già realizzato un dataset di prova disegnando numeri da 0 a 9 quindi l'app �
     Dense(10, activation='softmax')
 ])
 </code></pre>
+<p>Layer	Cosa fa<br>
+Conv2D(32, 3×3)	filtra l’immagine e trova bordi/curve<br>
+MaxPooling2D	riduce la dimensione (meno calcoli, riduce overfitting)<br>
+Dropout(0.25)	spegne il 25% dei neuroni per evitare overfitting
+</p>
 
+<pre><code>model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+</code></pre>
+
+<p>Adam: ottimo ottimizzatore automatico<br>
+
+categorical_crossentropy: adatto per classificazione multiclasse con one-hot encoding<br>
+
+accuracy: metrica di valutazione <br>
+</p>
 
