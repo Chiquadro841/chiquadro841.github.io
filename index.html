@@ -25,10 +25,11 @@
     <div class="menu">
       <button onclick="showContent('presentazione')">Profilo</button>
       <button onclick="showContent('articolo1')">Analisi Vendite</button>
+     <button onclick="showContent('articolo2')">Riconoscimento immagini - CNN</button>
     </div>
 
     <div class="content" id="content">
-      <!-- Il contenuto iniziale sarà caricato da JS -->
+      
     </div>
   </div>
 
@@ -48,6 +49,10 @@ function showContent(section) {
   } 
   else if (section === 'articolo1') {
     file = "articolo1.html";
+  }
+
+ else if (section === 'articolo2') {
+    file = "articolo2.html";
   }
 
   if(file) {
