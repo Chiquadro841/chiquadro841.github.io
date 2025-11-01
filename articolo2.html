@@ -42,12 +42,17 @@ Dropout(0.25)	spegne il 25% dei neuroni per evitare overfitting
 <pre><code>model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
+
+  model.fit(X_train, y_train, epochs=20, batch_size=32, validation_split=0.2)
 </code></pre>
 
+
 <p>Adam: ottimo ottimizzatore automatico<br>
-
 categorical_crossentropy: adatto per classificazione multiclasse con one-hot encoding<br>
-
-accuracy: metrica di valutazione <br>
+accuracy: metrica di valutazione <br><br>
+  
+20 epoche di apprendimento<br>
+batch da 32 immagini per volta<br>
+usa anche una validazione (20% del train) per monitorare overfitting durante il training<br>
 </p>
 
