@@ -1,5 +1,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Cambria", serif;  }
-  body { display: flex; min-height: 100vh; background-color: #121212; color: #eee; }
+  body { display: flex;
+        overflow-x: hidden;
+        min-height: 100vh; background-color: #121212; color: #eee; }
 
   .sidebar {
     width: 250px;
@@ -74,6 +76,8 @@ pre {
   overflow-x: auto;
   margin: 15px 0;
   box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 pre code {
@@ -123,6 +127,7 @@ table th, table td {
 table th {
   font-size:14px;
 }
+
 /* Optional: media query per mobile */
 @media (max-width: 600px) {
   img {
