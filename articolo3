@@ -5,17 +5,22 @@
 <h2>Femminicidi in Europa: analisi e modelli<br></h2>
 
 <h3>Panoramica</h3>
-<p>
+<p> presentazione
 </p>
 
 <a href="https://github.com/chiquadro841/digit_recognition" target="_blank">Link al repo</a>
 
-<p> Questa è come si presenta l'interfaccia</p>
+<h3> Feature Selection</h3>
+<p> spiegare scelta feature basata su relazioni lineari e cluster <br><br><br>
+
+cluster<br>
+0    0.713636<br>
+1    0.371250<br>
+2    0.365000<br>
+</p>
+
 <img src="img/Screenshot.png" width="600" height="600">
 
 <p>
-cluster
-0    0.713636
-1    0.371250
-2    0.365000
+
 </p>
