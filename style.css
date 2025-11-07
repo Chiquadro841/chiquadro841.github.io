@@ -109,6 +109,11 @@ pre code span.comment {
   margin: 15px 0;
   border-radius: 8px; 
 }
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
  /* Titoli e paragrafi */
 h2, h3, h4 {
