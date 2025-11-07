@@ -62,7 +62,7 @@ protection_index                   -0.647621<br> <br>
 <img src="img/scatterplot1.png" width="1200" height="900">
 <img src="img/barplot.png" width="600" height="600">
 
-<p>   MODELLO LOO RANDOM FOREST (standard 4 max depth, 300 estimators)<br>
+<p>   MODELLO LOO RANDOM FOREST basato su 3 cluster (standard 4 max depth, 300 estimators)<br>
 <br> Abbiamo scartato le variabili  'FEMALE_EMPLOYMENT','DIVORCE_RATE','economic_violence'<br><br>
   
 LOOCV Accuracy: 0.9583333333333334<br>
@@ -85,3 +85,23 @@ VIOLENCE                       0.045157<br><br>
 </p>
 
 <img src="img/barplot_cluster.png" width="600" height="600">
+
+<p>LOOCV Accuracy: 1.0<br>
+Confusion Matrix:<br>
+ [[12  0]<br>
+ [ 0 12]]<br>
+Precision classe 0: 1.0<br>
+Recall classe 0: 1.0<br>
+shame                          0.296124<br>
+useless                        0.240252<br>
+power                          0.122942<br>
+%_FEM_TER_EDU                  0.063559<br>
+time                           0.062310<br>
+PAY_GAP                        0.058515<br>
+protection_index               0.048819<br>
+segregation                    0.045641<br>
+%_AT_RISK_POVERTY_EXCLUSION    0.041860<br>
+VIOLENCE                       0.019979<br><br>
+  
+<img src="img/barplot_cluster2.png" width="600" height="600">
+</p>
