@@ -139,8 +139,9 @@ table th {
 /* Optional: media query per mobile */
 @media (max-width: 600px) {
   img {
-    width: auto;   /* Occupa tutto lo spazio disponibile su schermi piccoli */
-    height: auto;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
   }
  .main {
     padding: 15px;  /* Riduce lo spazio laterale su schermi piccoli */
