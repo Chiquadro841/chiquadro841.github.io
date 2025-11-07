@@ -139,7 +139,7 @@ table th {
 @media (max-width: 600px) {
   img {
     width: 100%;   /* Occupa tutto lo spazio disponibile su schermi piccoli */
-    height: 100%;
+    height: auto;
   }
  .main {
     padding: 15px;  /* Riduce lo spazio laterale su schermi piccoli */
