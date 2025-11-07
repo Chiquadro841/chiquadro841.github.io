@@ -100,33 +100,29 @@ i femminicidi non seguono un’unica dinamica lineare, ma si distribuiscono in g
 
 <hr>
 
-<h3>MODELLAZIONE</h3>
+<h3>MODELLI</h3>
 
-<p>Regressione lineare<br><br>
-    
+<h4>1.Regressione lineare</h4>
+<p>
 Iniziamo testando un modello lineare e vedere come si comportano le variabili. Per questo modello toglieremo le due variabili
 meno significative statisticamente, VIOLENCE, DIVORCE_RATE e %_FEM_TER_EDU (vedere sopra) e dopo aver accertato che non 
-  ci sono problemi di multicollinearità proviamo la regressione.<br><br>
-
+  ci sono problemi di multicollinearità proviamo la regressione.<br>
 Dopo la rimozione delle variabili meno significative e verificata l’assenza di multicollinearità, il modello lineare mostra:<br><br>
 
-R² = 0.765<br><br>
-
+R² = 0.765<br>
 P(F) = 0.00879<br><br>
 
-Il modello è statisticamente valido, ma la maggior parte dei singoli coefficienti non è significativa (P > 0.05):
-ciò suggerisce che le variabili prese singolarmente non spiegano il fenomeno, mentre la loro combinazione sì.<br><br>
-
+Il modello è statisticamente valido, ma la maggior parte dei singoli coefficienti non è significativa (P > 0.05):<br>
+ciò suggerisce che le variabili prese singolarmente non spiegano il fenomeno, mentre la loro combinazione sì.<br>
 In particolare, protection_index emerge come l’unico predittore fortemente significativo, ma non sufficiente da solo.<br><br>
 
-Conclusione dalla regressione:
-➡️ il fenomeno non è linearmente deterministico
-➡️ servono modelli capaci di cogliere interazioni e non linearità
-  
+Conclusione dalla regressione:<br>
+➡️ il fenomeno non è linearmente deterministico<br>
+➡️ servono modelli capaci di cogliere interazioni e non linearità<br>
 </p>
 
 
-<h4> Random Forest con Leave-One-Out Cross Validation (LOOCV)</h4>
+<h4> 2.Random Forest con Leave-One-Out Cross Validation (LOOCV)</h4>
 <p> 
 Osservando le feature nei due cluster sopra, troviamo che quelle meno decisive risultano
   'FEMALE_EMPLOYMENT','DIVORCE_RATE','economic_violence', 'VIOLENCE', cosi le scartiamo.<br>
