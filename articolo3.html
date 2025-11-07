@@ -9,20 +9,30 @@ n<head>
 
 <p>
 PREMESSE<br>
-- dati storici poco presenti<br>
--alcuni sondaggi sono episodici<br>
--natura di femminicidio diversa da paese in paese, usiamo proxy omicidio di donna da familiare o partner intimo, dato che
+- dati storici poco presenti per operazioni di panelling storici. Perciò useremo dati 2022 e sfrutteremo questa cosa per
+  recuperare dati raccolti una tantum da sondaggi altrimenti non sfruttabili per serie storiche.<br>
+-natura di femminicidio diversa da paese in paese, usiamo proxy omicidio di donna da familiare o partner intimo fornito da Eurostat, dato che
 comunque approssima bene il fenomeno (la maggior parte dei femminicidi avviene da conoscenti)<br><br>
 
-  FONTI DATI:<br><br>
-  
-# Dati Femminicidio  (hundred thousand inhabitants) EUROSTAT
-# ( Dati bulgaria - belgio - denmark - Estonia da WAVE Country Report 2023)<br><br>
+DATI e FONTI:<br><br>
 
-# Gender equality index campi-> POWER(position among istitutions and company) , 
-SEGREGATION (difference in edu field) , 
-TIME (care activities,cooking,social activities)
-# FRA survey 2012 questions: reason to not contacted services after violence, economic violence during life<br><br>
+Le variabili scelte per questa analisi sono:
+
+-Tasso omicidi di donne nazionali da parte di familiari o partner per 100k abitanti (Eurostat - completato con dati per bulgaria - belgio - denmark - Estonia da WAVE Country Report 2023)<br>
+-Occupazione femminile(Eurostat)<br>
+-Tasso di donne con almeno una violenza subita in età adulta (Eurostat)<br>
+-tasso di divorzi (Eurostat)<br>
+-Pay gap non adjusted (Eurostat) -> importante proxy di discriminazione sia salariale che di contratto<br>
+-% donne con educazione almeno terziaria(Eurostat)<br>
+-% donne a rischio povertà o esclusione sociale (Eurostat)<br>
+
+
+-indicatori POWER(position among istitutions and company) , 
+SEGREGATION (difference in education field) , 
+TIME (care activities,cooking,social activities) da Gender equality index disponibile pubblicamente.<br>
+- SHAMELESS e USELESS sono le percentuali di donne nel sondaggio FRA survey 2012: reason to not contacted services after violence, economic violence during life.
+  Sebbene siano dati vecchi sono gli unici realmente disponibili che riescano a rispondere a domande così delicate a livello informale e può essere un ottima proxy
+  per descrivere i casi di mancata denuncia, una delle cause più importanti a livello europeo a causare difficoltà di rilevamento.<br><br>
 
 #protection index:  presi dati su Wave country report 2023 su: numero aiuto nazionale, chiamate ricevute,
 # n shelter, letti, n woman centers, presenza supporto violenza e piano prevenzione.
@@ -31,9 +41,6 @@ TIME (care activities,cooking,social activities)
 </p>
 
 <a href="https://github.com/chiquadro841/digit_recognition" target="_blank">Link al repo</a>
-
-
-
 
 <h3> FEATURE SELECTION</h3>
 
