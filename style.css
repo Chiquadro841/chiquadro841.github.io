@@ -144,4 +144,9 @@ table th {
  .main {
     padding: 15px;  /* Riduce lo spazio laterale su schermi piccoli */
  }
+  .menu {
+    flex-wrap: wrap;       /* ✅ permette di andare a capo */
+    justify-content: center; /* opzionale, per centrarli */
+    gap: 10px;             /* puoi ridurre il gap su mobile */
+  }
 }
