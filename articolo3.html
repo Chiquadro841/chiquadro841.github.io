@@ -8,14 +8,21 @@
 
 
 <p>
+PREMESSE<br>
+- dati storici poco presenti<br>
+-alcuni sondaggi sono episodici<br>
+-natura di femminicidio diversa da paese in paese, usiamo proxy omicidio di donna da parente o partner dato che
+comunque approssima bene il fenomeno (la maggior parte dei femminicidi avviene da conoscenti)<br><br>
+
+  FONTI DATI:<br><br>
   
 # Dati Femminicidio  (hundred thousand inhabitants) EUROSTAT
-# ( Dati bulgaria - belgio - denmark - Estonia da WAVE Country Report 2023)
+# ( Dati bulgaria - belgio - denmark - Estonia da WAVE Country Report 2023)<br><br>
 
 # Gender equality index campi-> POWER(position among istitutions and company) , 
 SEGREGATION (difference in edu field) , 
 TIME (care activities,cooking,social activities)
-# FRA survey 2012 questions: reason to not contacted services after violence, economic violence during life
+# FRA survey 2012 questions: reason to not contacted services after violence, economic violence during life<br><br>
 
 #protection index:  presi dati su Wave country report 2023 su: numero aiuto nazionale, chiamate ricevute,
 # n shelter, letti, n woman centers, presenza supporto violenza e piano prevenzione.
@@ -38,11 +45,8 @@ TIME (care activities,cooking,social activities)
   adottare modelli e ragionamenti lineari o se occorre prendere la strada della multiplicità del fenomeno, fatto di relazioni non lineari
   profili diversi e interazioni tra variabili.<br><br>
 
-Tramite una matrice di correlazione otteniamo i seguenti dati:<br>
-
-COEFFICIENTI CORRELAZIONE LINEARE <br><br>
+Tramite una matrice di correlazione otteniamo i seguenti dati verso il livello di femminicidi:<br>
   
-                            FEMINICIDE_100k    <br> 
 FEMINICIDE_100k                     1.000000  <br>  
 power                              -0.146734   <br> 
 segregation                        -0.497518 <br> 
@@ -58,17 +62,25 @@ VIOLENCE                            0.053978  <br>
 %_AT_RISK_POVERTY_EXCLUSION         0.281343 <br>  
 protection_index                   -0.647621<br> <br> 
 
-Le variabili meno informative in modo lineare sono FEMALE_EMPLOYMENT e VIOLENCE
+Le variabili meno informative in modo lineare sono FEMALE_EMPLOYMENT e VIOLENCE<br>
+<br>
+Provando a usare un k-means per dividere i dati in due cluster otteniamo una cosa più interessante.
+Il modello basato su distanze riesce a catturare meglio la natura dei dati, ottenendo due cluster con differenza notevole
+  nei femminicidi medi tra i due gruppi. Infatti abbiamo:<br><br>
 
-
-  
-  cluster<br>
+    cluster<br>
 0    0.684583<br>
 1    0.371250<br><br>
 
-</p>
+
+  </p>
 
 <img src="img/clustering_all_features.png" width="650" height="450">
+  
+
+
+
+
 
 <p>------------------------------------------------------------------------</p>
 <h4>clustering dopo feature selection</h4>
