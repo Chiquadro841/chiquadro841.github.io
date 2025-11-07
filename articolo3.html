@@ -21,7 +21,8 @@
 
 <a href="https://github.com/chiquadro841/digit_recognition" target="_blank">Link al repo</a>
 
-<h3> Feature Selection</h3>
+<h3> FEATURE SELECTION</h3>
+
 <p> spiegare scelta feature basata su relazioni lineari e cluster <br><br><br>
 
 
@@ -36,6 +37,8 @@ cluster<br>
 0    0.713636<br>
 1    0.371250<br>
 2    0.365000<br><br><br><br>
+
+<img src="img/clustering_2.png" width="600" height="600">
 
 COEFFICIENTI CORRELAZIONE LINEARE <br><br>
   
@@ -56,35 +59,13 @@ VIOLENCE                            0.053978  <br>
 protection_index                   -0.647621<br> <br> 
   
 </p>
-
-<img src="img/clustering.png" width="400" height="600">
 <img src="img/clustering_all_features.png" width="400" height="600">
-<img src="img/scatterplot1.png" width="1200" height="900">
-<img src="img/barplot.png" width="600" height="600">
 
-<p>   MODELLO LOO RANDOM FOREST basato su 3 cluster (standard 4 max depth, 300 estimators)<br>
+
+
+<p>   MODELLO LOO RANDOM FOREST basato su 2 cluster (standard 4 max depth, 300 estimators)<br>
 <br> Abbiamo scartato le variabili  'FEMALE_EMPLOYMENT','DIVORCE_RATE','economic_violence'<br><br>
   
-LOOCV Accuracy: 0.9583333333333334<br>
-Confusion Matrix:<br>
- [[11  0  0]<br>
- [ 0 12  0]<br>
- [ 1  0  0]]<br>
-Precision classe 0: 0.9166666666666666<br>
-Recall classe 0: 1.0<br>
-shame                          0.260871<br>
-useless                        0.213648<br>
-power                          0.123402<br>
-PAY_GAP                        0.072879<br>
-protection_index               0.068161<br>
-segregation                    0.057960<br>
-%_FEM_TER_EDU                  0.054418<br>
-time                           0.051982<br>
-%_AT_RISK_POVERTY_EXCLUSION    0.051521<br>
-VIOLENCE                       0.045157<br><br>
-</p>
-
-<img src="img/barplot_cluster.png" width="600" height="600">
 
 <p>LOOCV Accuracy: 1.0<br>
 Confusion Matrix:<br>
@@ -109,3 +90,5 @@ VIOLENCE                       0.019979<br><br>
 0    0.684583
 1    0.371250
 </p>
+
+
