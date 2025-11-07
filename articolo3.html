@@ -12,7 +12,9 @@
 # Dati Femminicidio  (hundred thousand inhabitants) EUROSTAT
 # ( Dati bulgaria - belgio - denmark - Estonia da WAVE Country Report 2023)
 
-# Gender equality index campi-> POWER(position among istitutions and company) , SEGREGATION (difference in edu field) , TIME (care activities,cooking,social activities)
+# Gender equality index campi-> POWER(position among istitutions and company) , 
+SEGREGATION (difference in edu field) , 
+TIME (care activities,cooking,social activities)
 # FRA survey 2012 questions: reason to not contacted services after violence, economic violence during life
 
 #protection index:  presi dati su Wave country report 2023 su: numero aiuto nazionale, chiamate ricevute,
@@ -28,7 +30,33 @@
 
 <h3> FEATURE SELECTION</h3>
 
-<p> spiegare scelta feature basata su relazioni lineari e cluster <br><br><br>
+<p> Per scegliere le variabili più informative abbiamo effettuato un doppio test:<br>
+  - Coefficiente correlazione lineare<br>
+  - Clustering con K-means<br><br>
+
+  La potenza di questi metodi incrociati è che permette di capire a fondo la natura del fenomeno e dei dati: se è possible
+  adottare modelli e ragionamenti lineari o se occorre prendere la strada della multiplicità del fenomeno, fatto di relazioni non lineari
+  profili diversi e interazioni tra variabili.<br><br>
+
+Tramite una matrice di correlazione otteniamo i seguenti dati:<br>
+
+COEFFICIENTI CORRELAZIONE LINEARE <br><br>
+  
+                            FEMINICIDE_100k    <br> 
+FEMINICIDE_100k                     1.000000  <br>  
+power                              -0.146734   <br> 
+segregation                        -0.497518 <br> 
+time                               -0.214998    <br> 
+shame                               0.333514  <br>  
+useless                             0.415010 <br> 
+economic_violence                   0.266780  <br> 
+PAY_GAP                             0.255228 <br>   
+DIVORCE_RATE                        0.416077  <br> 
+FEMALE_EMPLOYMENT                   0.140595  <br> 
+%_FEM_TER_EDU                       0.060473   <br>   
+VIOLENCE                            0.053978  <br>    
+%_AT_RISK_POVERTY_EXCLUSION         0.281343 <br>  
+protection_index                   -0.647621<br> <br> 
 
   cluster<br>
 0    0.684583<br>
@@ -54,23 +82,7 @@ REGRESSIONE LINEARE  R2 0.765  P(F)= 0.00879
 
 
 
-COEFFICIENTI CORRELAZIONE LINEARE <br><br>
-  
-                            FEMINICIDE_100k    <br> 
-FEMINICIDE_100k                     1.000000  <br>  
-power                              -0.146734   <br> 
-segregation                        -0.497518 <br> 
-time                               -0.214998    <br> 
-shame                               0.333514  <br>  
-useless                             0.415010 <br> 
-economic_violence                   0.266780  <br> 
-PAY_GAP                             0.255228 <br>   
-DIVORCE_RATE                        0.416077  <br> 
-FEMALE_EMPLOYMENT                   0.140595  <br> 
-%_FEM_TER_EDU                       0.060473   <br>   
-VIOLENCE                            0.053978  <br>    
-%_AT_RISK_POVERTY_EXCLUSION         0.281343 <br>  
-protection_index                   -0.647621<br> <br> 
+
   
 </p>
 
