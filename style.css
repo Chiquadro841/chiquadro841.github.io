@@ -145,15 +145,15 @@ table th {
 /* Optional: media query per mobile */
 @media (max-width: 600px) {
   img {
-  max-width: 100%;
+  max-width: 600px;;
   width: 100%;
   height: auto;
   }
  .main {
-    padding: 15px;  /* Riduce lo spazio laterale su schermi piccoli */
+    padding: 15px;  
  }
   .menu {
-    flex-wrap: wrap;       /* ✅ permette di andare a capo */
-    gap: 10px;             /* puoi ridurre il gap su mobile */
+    flex-wrap: wrap;       
+    gap: 10px;             
   }
 }
