@@ -22,8 +22,8 @@ su trend e stagionalità.
   Già questo è un punto interessante per la gestione dei materiali.</p>
 
   <!--  grafico -->
-<img src="img/sales_to_category.png" alt="Revenue" width="500" height="500">
-<img src="img/num_sales.png" alt="Num Sales" width="500"  height="500">
+<img src="img/sales_to_category.png" alt="Revenue" width="500" height="350">
+<img src="img/num_sales.png" alt="Num Sales" width="500"  height="350">
 
  <p> Per le sotto-categorie otteniamo questo risultato:</p>
 
@@ -114,7 +114,7 @@ p risulta ben superiore il limite s di 0.05 quindi non risultano differenze stat
 
 <h4>Analisi dei Top Clienti</h4>
 <p>Per ogni cliente è utile visualizzare lo storico degli acquisti in un grafico a linee per vederne il comportamento.</p>
-<img src="img/lineplot_customers.png" width="800" height="700">
+<img src="img/lineplot_customers.png" width="800" height="350">
 <p><br> Dal grafico notiamo che alcuni dei maggiori contributori al fatturato (in particolare SM-20320 e TC-20980) hanno raggiunto questi volumi principalmente
   attraverso ordini una tantum di grande entità, piuttosto che attraverso acquisti regolarie.<br><br>
 
@@ -122,19 +122,19 @@ Ora possiamo selezionare i top clienti storici e metterli a confronto con la spe
 </p>
 
 <!-- Spazio per grafico -->
-<img src="img/richest_sales.png" alt="Top Clienti" width="500">
+<img src="img/richest_sales.png" alt="Top Clienti" width="500" height="350">
 
 
 <h3>Forecasting </h3>
 <p>Per prima cosa osserviamo l'andamento delle vendite mensili per capire come si muove la serie:</p>
-<img src="img/lineplot_monthly.png" alt="storico vendite" width="700">
+<img src="img/lineplot_monthly.png" alt="storico vendite" width="700" height="350">
 
 <p>Notiamo un'andatura stagionale marcata con un lieve trend in crescita.<br>
 Durante l'anno avvengono due picchi regolarmente ad agosto e a novembre mentre tra dicembre e gennaio abbiamo i livelli più bassi di vendite.<br>
 <br>Ora testiamo un modello sarima sui dati disponibili e vediamo come si comporta. Usando parametri standard
 a 1 e una stagionalità a 24 otteniamo il seguente grafico:</p>
 
-<img src="img/output.png" alt="sarimax" width="700">
+<img src="img/output.png" alt="sarimax" width="700" height="350">
 <p><br> Otteniamo un mape ( errore % medio) del 22%.<br>
 Il modello si adatta bene sia al trend che alla stagionalità dato che la serie stessa mostra un andamento regolare.<br>
   
@@ -148,7 +148,7 @@ Per scopo dimostrativo useremo tre diversi modelli statistici per prevedere i 12
 In questo caso la serie è regolare quindi ci aspettiamo che tutti e tre i modelli si comportino bene sia in trend che stagionalità.</p>
 
 <!-- Spazio per grafico -->
-<img src="img/models_forecast.png" alt="Previsioni Multi-Modello" width="700">
+<img src="img/models_forecast.png" alt="Previsioni Multi-Modello" width="700" height="350">
 <p>Le previsioni dei modelli sono concordanti e ci mostrano bene il minimo tra dicembre e gennaio e poi una ripartenza
 fino ai picchi stagionali. L'andamento suggerisce una continuazione del trend in crescita con una probabilità di superare anche il massimo
 della serie storica nei suoi punti più alti.<br><br>
@@ -164,4 +164,4 @@ promozioni materiale arredamento o tecnologia che generano più ricavi) si potr�
 Per completare il progetto possiamo realizzare una dashboard per tenere d'occhio i principali indicatori usati nell'analisi e
   monitorare come cambieranno nel tempo.</p>
 
-<img src="img/dashboard.jpg" widht="900" height="600">
+<img src="img/dashboard.jpg" widht="900" height="350"">
