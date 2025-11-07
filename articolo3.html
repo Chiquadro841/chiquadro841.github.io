@@ -101,31 +101,37 @@ i femminicidi non seguono un’unica dinamica lineare, ma si distribuiscono in g
 
 <h3>MODELLAZIONE</h3>
 
-<p>
+<p>Regressione lineare<br><br>
+    
 Iniziamo testando un modello lineare e vedere come si comportano le variabili. Per questo modello toglieremo le due variabili
 meno significative statisticamente, VIOLENCE, DIVORCE_RATE e %_FEM_TER_EDU (vedere sopra) e dopo aver accertato che non 
   ci sono problemi di multicollinearità proviamo la regressione.<br><br>
 
-Il risultato è mediocre perchè abbiamo un modello buono e significativo:<br><br>
-  
-REGRESSIONE LINEARE  R2 0.765  P(F)= 0.00879<br><br>
+Dopo la rimozione delle variabili meno significative e verificata l’assenza di multicollinearità, il modello lineare mostra:<br><br>
 
-ma in realtà la maggior parte dei coefficienti del modello risultano poco significativi (P value> 0.05> eccetto per
-la variabile piu importante protection index che comunque da sola non riesce certo a spiegare il fenomeno.<br>
-Ora sappiamo che statisticamente le variabili insieme hanno un potere predittivo il modello 
-ma non possiamo dire che ogni variabile, da sola, contribuisca in modo netto.<br>
+R² = 0.765<br><br>
+
+P(F) = 0.00879<br><br>
+
+Il modello è statisticamente valido, ma la maggior parte dei singoli coefficienti non è significativa (P > 0.05):
+ciò suggerisce che le variabili prese singolarmente non spiegano il fenomeno, mentre la loro combinazione sì.<br><br>
+
+In particolare, protection_index emerge come l’unico predittore fortemente significativo, ma non sufficiente da solo.<br><br>
+
+Conclusione dalla regressione:
+➡️ il fenomeno non è linearmente deterministico
+➡️ servono modelli capaci di cogliere interazioni e non linearità
   
 </p>
 
 
-<h4> MODELLO LOO RANDOM FOREST basato su 2 cluster (standard 4 max depth, 300 estimators)</h4>
+<h4> Random Forest con Leave-One-Out Cross Validation (LOOCV)</h4>
 <p> 
 Osservando le feature nei due cluster sopra, troviamo che quelle meno decisive risultano
   'FEMALE_EMPLOYMENT','DIVORCE_RATE','economic_violence', 'VIOLENCE', cosi le scartiamo.<br>
   Otteniamo cosi un modello che riesce perfettamente a riconoscere i cluster con i seguenti risultati:<br>
 </p>
   
-
 <p>LOOCV Accuracy: 1.0<br>
 Confusion Matrix:<br>
  [[12  0]<br>
@@ -142,12 +148,25 @@ time                           0.051107<br>
 %_AT_RISK_POVERTY_EXCLUSION    0.040788<br>
 segregation                    0.038772<br><br>
 
-A livello grafico i cluster trovati riescono a distinguere abbastanza bene i paesi più a rischio come da grafico sotto,
-anche se emergono eccezioni difficilmente catturabili in entrambi i sensi:<br>
-  -ci sono paesi come la finlandia o malta che hanno indicatori sociali molto buoni ma manifestano femminicidi sopra la media.<br>
-  -ci sono paesi come slovacchia e bulgaria che hanno indicatori sociali peggiori della media ma hanno casi di femminicidio nella media
-  o come nel caso della slovenia persino minori di tutti i paesi considerati. Cambiando il numero di cluster questa differenza non cambia
-  e bisogna trattarli come tali, casi eccezionali non spiegabili attraverso classici indicatori sociali.
+Feature importance principali:<br><br>
+
+shame<br>
+useless<br>
+power<br>
+protection_index<br>
+pay_gap<br><br>
+
+È interessante notare che non emergono solo indicatori economici, ma soprattutto indicatori culturali e di accesso ai servizi.<br><br>
+
 <img src="img/barplot_cluster2.png" width="600" height="350">
+    
+Il modello classifica correttamente quasi tutti gli stati, ma rimangono eccezioni significative:<br><br>
+
+✔ Finlandia e Malta: ottimi indicatori sociali → femminicidi sopra la media<br>
+✔ Slovenia, Bulgaria, Slovacchia: indicatori peggiori della media → femminicidi nella media o inferiori<br><br>
+
+Questo comportamento persiste anche aumentando il numero di cluster: alcuni Paesi sono outlier strutturali, 
+probabilmente per variabili non osservate (contesto storico-culturale, modalità di rilevazione, presenza di crimini non denunciati, ecc.).
+
 
 </p>
