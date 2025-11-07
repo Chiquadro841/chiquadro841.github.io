@@ -26,6 +26,7 @@
       <button onclick="showContent('presentazione', this)">Profilo</button>
      <button onclick="showContent('articolo1', this)">Analisi Vendite</button>
      <button onclick="showContent('articolo2', this)">Riconoscimento numeri - CNN</button>
+     <button onclick="showContent('articolo3', this)">Femminicidi in Europa: analisi e modelli</button>
     </div>
 
     <div class="content" id="content">
@@ -53,6 +54,7 @@ function showContent(section, btn) {
   if (section === 'presentazione') file = "profilo.html";
   else if (section === 'articolo1') file = "articolo1.html";
   else if (section === 'articolo2') file = "articolo2.html";
+ else if (section === 'articolo3') file = "articolo3.html";
 
   if(file) {
     fetch(file)
