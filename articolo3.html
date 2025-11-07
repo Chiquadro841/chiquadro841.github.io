@@ -74,27 +74,31 @@ Il modello basato su distanze riesce a catturare meglio la natura dei dati, otte
 
 
   </p>
-
+<h4>Heatmap delle feature per cluster</h4>
 <img src="img/clustering_all_features.png" width="650" height="450">
   
 
-
-
-
-
-<p>------------------------------------------------------------------------</p>
+<hr>
 <h4>clustering dopo feature selection</h4>
 <img src="img/clustering_2.png" width="620" height="450">
 
-
+<h3>MODELLAZIONE</h3>
 
 <p>
-REGRESSIONE LINEARE  R2 0.765  P(F)= 0.00879
-# VIOLENCE   FEMALE_EMPLOYMENT    %_FEM_TER_EDU 
+Iniziamo testando un modello lineare e vedere come si comportano le variabili. Per questo modello toglieremo le due variabili
+meno significative statisticamente, VIOLENCE, DIVORCE_RATE e %_FEM_TER_EDU (vedere sopra) e dopo aver accertato che non 
+  ci sono problemi di multicollinearità proviamo la regressione.<br><br>
 
-'protection_index','%_AT_RISK_POVERTY_EXCLUSION',
-           'power','segregation','time','shame','useless',
-           'PAY_GAP', 'DIVORCE_RATE','economic_violence'
+Il risultato è mediocre perchè abbiamo un modello buono e significativo:<br><br>
+  
+REGRESSIONE LINEARE  R2 0.765  P(F)= 0.00879<br><br>
+
+ma in realtà la maggior parte dei coefficienti del modello risultano poco significativi (P value> 0.05> eccetto per
+la variabile piu importante protection index che comunque da sola non riesce certo a spiegare il fenomeno.<br>
+Ora sappiamo che statisticamente le variabili insieme hanno un potere predittivo il modello 
+ma non possiamo dire che ogni variabile, da sola, contribuisca in modo netto.<br>
+
+
 
 
 
