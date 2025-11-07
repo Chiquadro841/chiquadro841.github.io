@@ -138,7 +138,7 @@ table th {
 /* Optional: media query per mobile */
 @media (max-width: 600px) {
   img {
-    width: 100%;   /* Occupa tutto lo spazio disponibile su schermi piccoli */
+    width: auto;   /* Occupa tutto lo spazio disponibile su schermi piccoli */
     height: auto;
   }
  .main {
